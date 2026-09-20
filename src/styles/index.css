@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-canvas text-ink-900 antialiased;
+  font-feature-settings: "cv11", "ss01";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d8e6;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.badge {
+  @apply inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold tracking-wide;
+}
+.badge-beta {
+  @apply badge bg-ink-100 text-ink-500;
+}
+.badge-pro {
+  @apply badge bg-ink-900 text-white;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+}
+.btn-primary {
+  @apply btn text-white shadow-[0_2px_6px_rgba(248,124,86,0.35)] transition-all hover:shadow-[0_4px_10px_rgba(248,124,86,0.45)];
+  background: linear-gradient(135deg, #fa9776 0%, #f87c56 60%, #f0673d 100%);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #fca387 0%, #fa8b64 60%, #f0703f 100%);
+}
+.bg-brand-gradient {
+  background: linear-gradient(135deg, #fa9776 0%, #f87c56 60%, #f0673d 100%);
+}
+.btn-secondary {
+  @apply btn bg-white text-ink-700 border border-ink-200 hover:bg-ink-100;
+}
+.btn-ghost {
+  @apply btn text-ink-500 hover:bg-ink-100;
+}
+.btn-danger {
+  @apply btn bg-red-50 text-red-600 hover:bg-red-100;
+}
+
+.card {
+  @apply rounded-xl2 border border-ink-100 bg-card shadow-card;
+}
+
+.input {
+  @apply w-full rounded-lg border border-ink-200 bg-white px-3 py-2 text-sm text-ink-900 placeholder:text-ink-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100;
+}
+
+.label {
+  @apply mb-1.5 block text-xs font-medium text-ink-500;
+}
